@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Select from 'components/utils/Select';
 import SearchBar from 'components/utils/SearchBar';
+import { getSearchEntities } from 'utils/searching';
 import { statuses } from 'constants/statuses';
 
 import './styles.css';
@@ -19,7 +20,7 @@ export default class UsersTable extends Component {
         const { value } = e.currentTarget;
         const { setUI } = this.props;
 
-        setUI({ search: value });
+        setUI(getSearchEntities(value));
     };
 
     handleOnSelectChange = (id) => (e) => {
