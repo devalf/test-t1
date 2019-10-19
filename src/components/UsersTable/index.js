@@ -2,12 +2,12 @@ import { connect } from 'react-redux';
 
 import Component from './component';
 import { editUserStatus } from 'state/usersData/actions';
-import { selectUsers } from 'state/usersData/selectors';
+import { selectUsersFiltered } from 'state/usersData/selectors';
 import { setUI } from 'state/ui/actions';
 import { selectUISearch } from 'state/ui/selectors';
 
 const mapStateToProps = (state) => ({
-    users: selectUsers(state),
+    users: selectUsersFiltered(state),
     search: selectUISearch(state)
 });
 

@@ -1,4 +1,7 @@
 import { createSelector } from 'reselect';
+import { filter } from 'lodash';
+
+import { selectUISearch } from 'state/ui/selectors';
 
 const selectUsersData = state => state.usersData;
 
@@ -7,7 +10,15 @@ const selectUsersDataEntities = createSelector(
     ({ entities }) => entities
 );
 
-export const selectUsers = createSelector(
-    selectUsersDataEntities,
-    ({ users }) => users
+export const selectUsersFiltered = createSelector(
+    [selectUsersDataEntities, selectUISearch],
+    ({ users }, search) => {
+        return  filter(users, ({ name, role, connectedOn, status }) => {
+            return !search ||
+                `${name}`.toLowerCase().includes(search.toLowerCase()) ||
+                `${role}`.toLowerCase().includes(search.toLowerCase()) ||
+                `${connectedOn}`.toLowerCase().includes(search.toLowerCase()) ||
+                `${status}`.toLowerCase().includes(search.toLowerCase());
+        });
+    }
 );

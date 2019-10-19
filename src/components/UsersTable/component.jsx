@@ -9,7 +9,7 @@ import './styles.css';
 
 export default class UsersTable extends Component {
     static propTypes = {
-        users: PropTypes.object,
+        users: PropTypes.array,
         editUser: PropTypes.func,
         setUI: PropTypes.func,
         search: PropTypes.string
@@ -37,16 +37,16 @@ export default class UsersTable extends Component {
                 <div className={'alignCenter mar-h'}>
                     <SearchBar onChangeHandler={this.handleOnInputChange} value={search} />
                 </div>
-                {Object.keys(users).map(user => <div key={users[user].id} className={'tableGrid'}>
-                    <div>{users[user].name}</div>
-                    <div>{users[user].role}</div>
-                    <div>{users[user].connectedOn}</div>
+                {users.map(user => <div key={user.id} className={'tableGrid'}>
+                    <div>{user.name}</div>
+                    <div>{user.role}</div>
+                    <div>{user.connectedOn}</div>
                     <div>
                         <Select
                             name={'userStatus'}
                             options={statuses}
-                            value={users[user].status}
-                            onChangeHandler={this.handleOnSelectChange(users[user].id)}
+                            value={user.status}
+                            onChangeHandler={this.handleOnSelectChange(user.id)}
                         />
                     </div>
                 </div>)}
