@@ -29,13 +29,21 @@ export default class UsersTable extends Component {
         editUser(id, status);
     };
 
+    handleOnReset = () => {
+        this.props.setUI({ search: '' });
+    };
+
     render() {
         const { users, search } = this.props;
 
         return (
             <div>
                 <div className={'alignCenter mar-h'}>
-                    <SearchBar onChangeHandler={this.handleOnInputChange} value={search} />
+                    <SearchBar
+                        onChangeHandler={this.handleOnInputChange}
+                        value={search}
+                        onResetClick={this.handleOnReset}
+                    />
                 </div>
                 {users.map(user => <div key={user.id} className={'tableGrid'}>
                     <div>{user.name}</div>
