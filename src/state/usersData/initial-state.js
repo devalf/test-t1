@@ -15,10 +15,10 @@ export const users = [
     },
     {
         "id": '003',
-        "name": "Clementine Bauch",
-        "role": "Manager",
-        "connectedOn": "2013-05-06",
-        "status": "Screen"
+        "name": "Ervin Howell",
+        "role": "Engineer",
+        "connectedOn": "2017-01-01",
+        "status": "Hire"
     },
     {
         "id": '002',
@@ -52,7 +52,7 @@ export const users = [
     {
         "id": '008',
         "name": "Nicholas Runolfsdottir V",
-        "role": "Engineer",
+        "role": "Manager",
         "connectedOn": "2011-03-05",
         "status": "Explored"
     },

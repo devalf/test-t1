@@ -16,3 +16,8 @@ export const selectUISearchTwo = createSelector(
     selectUIState,
     ({ searchTwo }) => searchTwo
 );
+
+export const selectUISearchCondition = createSelector(
+    selectUIState,
+    ({ condition }) => condition
+);
