@@ -1,6 +1,7 @@
 import { createSelector } from 'reselect';
 import { filter } from 'lodash';
 
+import { statuses } from 'constants/statuses';
 import {
     selectUISearch,
     selectUISearchOne,
@@ -54,3 +55,13 @@ const filterUsersAllColumns = (users, text) => {
             `${status}`.toLowerCase().includes(text);
     });
 };
+
+export const selectUsersStatusesCountMap = createSelector(
+    selectUsersDataEntities,
+    ({ users }) =>
+        statuses.map(userStatus => ({
+                status: userStatus,
+                count: filter(users, ({ status }) => status === userStatus).length
+            })
+        )
+);

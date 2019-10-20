@@ -2,13 +2,14 @@ import { connect } from 'react-redux';
 
 import Component from './component';
 import { editUserStatus } from 'state/usersData/actions';
-import { selectUsersFiltered } from 'state/usersData/selectors';
+import { selectUsersFiltered, selectUsersStatusesCountMap } from 'state/usersData/selectors';
 import { setUI } from 'state/ui/actions';
 import { selectUISearch } from 'state/ui/selectors';
 
 const mapStateToProps = (state) => ({
     users: selectUsersFiltered(state),
-    search: selectUISearch(state)
+    search: selectUISearch(state),
+    statusesCountMap: selectUsersStatusesCountMap(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -13,7 +13,12 @@ export default class UsersTable extends Component {
         users: PropTypes.array,
         editUser: PropTypes.func,
         setUI: PropTypes.func,
-        search: PropTypes.string
+        search: PropTypes.string,
+        statusesCountMap: PropTypes.array
+    };
+
+    static defaultProps = {
+        statusesCountMap: []
     };
 
     handleOnInputChange = (e) => {
@@ -35,7 +40,7 @@ export default class UsersTable extends Component {
     };
 
     render() {
-        const { users, search } = this.props;
+        const { users, search, statusesCountMap } = this.props;
 
         return (
             <div>
@@ -59,6 +64,12 @@ export default class UsersTable extends Component {
                         />
                     </div>
                 </div>)}
+                <div>
+                    <h4>Statistics</h4>
+                    {statusesCountMap.map(({ status, count }) =>
+                        <div key={status}>{status}: {count}</div>
+                    )}
+                </div>
             </div>
         );
     }
