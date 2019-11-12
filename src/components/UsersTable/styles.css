@@ -8,3 +8,8 @@
 .tableGrid > div {
     margin: .5rem;
 }
+
+.searchDescription {
+    font-size: .75rem;
+    margin-bottom: 1rem;
+}

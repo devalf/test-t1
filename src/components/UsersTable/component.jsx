@@ -50,6 +50,7 @@ export default class UsersTable extends Component {
                         value={search}
                         onResetClick={this.handleOnReset}
                     />
+                    <div className={'searchDescription'}>* available regular searching or advanced such as: A and B, A or B</div>
                 </div>
                 {users.map(user => <div key={user.id} className={'tableGrid'}>
                     <div>{user.name}</div>
