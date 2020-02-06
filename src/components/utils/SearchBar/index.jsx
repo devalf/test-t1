@@ -7,7 +7,7 @@ const SearchBar = ({ value, onChangeHandler, onResetClick }) => {
     return (
         <Fragment>
             <input type='text' value={value} onChange={onChangeHandler} className={'searchInput'} />
-            <button type='reset' className={'mar'} onClick={onResetClick}>Reset</button>
+            <button type='reset' className={'mar resetBtn'} onClick={onResetClick}>Reset</button>
         </Fragment>
     );
 };
