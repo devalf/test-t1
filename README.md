@@ -1,11 +1,15 @@
 ## Testing task
 
-In the project directory, you can run:
+In the project directory execute:
 
 ### `npm i && npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+It runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) in the browser to load Application.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Since it is testing task with limited time for development, here was implemented the base logic without any advanced features such as `Modular CSS` and many more advanced tools and approaches 
+
+So available features:
+* advanced searching through the multiple users fields
+* multiple conditions searching such as - A and B, A or B (very base DEMO approach)
+* changing user status and reflect common statistic
