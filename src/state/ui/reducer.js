@@ -1,20 +1,15 @@
-import { SET_UI } from './action-types';
-import { ui as uiInitialState } from './initial-state';
+import { createReducer } from 'state/utils/createReducer';
+import { actionTypes } from './actions';
+import { ui as initialState } from './initialState';
 
-export const ui = (state = uiInitialState, { type, payload }) => {
-    switch (type) {
-        case SET_UI:
-            const { search, searchOne, searchTwo, condition } = payload;
+const setUI = (state, { payload: { search, searchOne, searchTwo, condition } }) => ({
+    ...state,
+    search,
+    searchOne,
+    searchTwo,
+    condition
+});
 
-            return {
-                ...state,
-                search,
-                searchOne,
-                searchTwo,
-                condition
-            };
-
-        default:
-            return state;
-    }
-};
+export const ui = createReducer(initialState, {
+    [actionTypes.setUI]: setUI
+});

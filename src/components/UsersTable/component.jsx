@@ -52,6 +52,13 @@ export default class UsersTable extends Component {
                     />
                     <div className={'searchDescription'}>* available regular searching or advanced such as: A and B, A or B</div>
                 </div>
+                <div className={'tableGrid'}>
+                    <div>User</div>
+                    <div>Role</div>
+                    <div>Date</div>
+                    <div>Status</div>
+                </div>
+
                 {users.map(user => <div key={user.id} className={'tableGrid'}>
                     <div>{user.name}</div>
                     <div>{user.role}</div>
@@ -65,6 +72,9 @@ export default class UsersTable extends Component {
                         />
                     </div>
                 </div>)}
+
+                {!users.length && <div className={'noResults'}>No search results</div>}
+
                 <div>
                     <h4>Statistics</h4>
                     {statusesCountMap.map(({ status, count }) =>

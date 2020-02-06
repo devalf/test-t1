@@ -1,18 +1,19 @@
-import { ADD_USERS, EDIT_USER } from './action-types';
+export const actionTypes = {
+    addUsers: 'ADD_USERS',
+    editUser: 'EDIT_USER'
+};
 
-export const addUsers = ({ users }) => {
-    return {
-        type: ADD_USERS,
+export const addUsers = (users) => ({
+    type: actionTypes.addUsers,
+    payload: {
         users
-    };
-};
+    }
+});
 
-export const editUserStatus = (userId, status) => {
-    return {
-        type: EDIT_USER,
-        payload: {
-            userId,
-            status
-        }
-    };
-};
+export const editUserStatus = (userId, status) => ({
+    type: actionTypes.editUser,
+    payload: {
+        userId,
+        status
+    }
+});
