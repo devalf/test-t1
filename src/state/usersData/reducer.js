@@ -1,6 +1,6 @@
-import { createReducer } from 'state/utils/reducer-util';
+import { createReducer } from 'state/utils/createReducer';
 import { normalizeData } from 'state/utils/normalize';
-import { users as usersInitial } from './initial-state';
+import { users as usersInitial } from './initialState';
 import { actionTypes } from './actions';
 
 const usersNormalized = normalizeData({ users: usersInitial });
