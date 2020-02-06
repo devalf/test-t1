@@ -1,9 +1,11 @@
 import { ADD_USERS, EDIT_USER } from './action-types';
 
-export const addUsers = ({ users }) => {
+export const addUsers = (users) => {
     return {
         type: ADD_USERS,
-        users
+        payload: {
+            users
+        }
     };
 };
 

@@ -4,9 +4,10 @@ import { normalizeData } from 'state/utils/normalize';
 
 const usersNormalized = normalizeData({ users: usersInitial });
 
-export const usersData = (state = usersNormalized, { type, users, payload }) => {
+export const usersData = (state = usersNormalized, { type, payload }) => {
     switch (type) {
         case ADD_USERS:
+            const { users } = payload;
             const newUsers = normalizeData({ users });
 
             return {
